@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ayan"]
   spec.email         = ["ayan.kurmanbai@gmail.com"]
 
-  spec.summary       = %q{TODO: A gem for generating gitlab release notes.}
+  spec.summary       = %q{A gem for generating gitlab release notes.}
   spec.homepage      = "https://github.com/kurmanbayan/gitlab_release_note_generator"
   spec.license       = "MIT"
 
