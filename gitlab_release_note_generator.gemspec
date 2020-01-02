@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ayan.kurmanbai@gmail.com"]
 
   spec.summary       = %q{TODO: A gem for generating gitlab release notes.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/kurmanbayan/gitlab_release_note_generator"
   spec.license       = "MIT"
 
   spec.metadata["homepage_uri"] = spec.homepage
