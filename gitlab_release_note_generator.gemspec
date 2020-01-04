@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ayan"]
   spec.email         = ["ayan.kurmanbai@gmail.com"]
 
-  spec.summary       = %q{A gem for generating gitlab release notes.}
+  spec.summary       = %q{(WORK IN PROGRESS) A gem for generating gitlab release notes.}
   spec.homepage      = "https://github.com/kurmanbayan/gitlab_release_note_generator"
   spec.license       = "MIT"
 
@@ -26,5 +26,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.2"
+  spec.add_development_dependency "faraday", "~> 1.0"
   
 end
