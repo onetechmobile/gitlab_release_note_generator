@@ -3,5 +3,6 @@ require "gitlab_release_note_generator/builder"
 
 module GitlabReleaseNoteGenerator
   class Error < StandardError; end
-  # Your code goes here...
+  builder = GitlabReleaseNoteGenerator::Builder.new
+  builder.main
 end
