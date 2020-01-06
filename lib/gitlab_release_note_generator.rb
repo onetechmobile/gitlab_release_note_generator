@@ -8,5 +8,5 @@ module GitlabReleaseNoteGenerator
   private_token = ARGV[1]
   project_id = ARGV[2] 
 
-  builder.main
+  builder.main(host_name, private_token, project_id)
 end

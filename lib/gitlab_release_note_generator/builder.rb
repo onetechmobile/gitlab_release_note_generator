@@ -3,15 +3,18 @@ require 'json'
 
 module GitlabReleaseNoteGenerator
     class Builder
-        def main       
-            conn = Faraday.new(:url => 'https://gitlab.com/api/v4/projects/16087798') do |faraday|
-                faraday.headers['PRIVATE-TOKEN'] = 'Mozsks-bdJEAk1C8KJsq'
+        @base_url = 'https://'
+
+        def main(host_name, private_token, project_id)       
+            base_url += "#{host_name}/api/v4/projects/#{project_id}"
+            conn = Faraday.new(:url => base_url) do |faraday|
+                faraday.headers['PRIVATE-TOKEN'] = private_token
             end
             get_tags(conn)
         end
 
         def get_tags(conn) 
-            response = conn.get 'https://gitlab.com/api/v4/projects/16087798/repository/tags'
+            response = conn.get base_url + '/repository/tags'
             tags_dict = JSON.parse(response.body)
             tag_name = tags_dict[0]["name"]
 
@@ -23,12 +26,12 @@ module GitlabReleaseNoteGenerator
         end
 
         def get_all_merge_request_before(conn, datetime, tag) 
-            response = conn.get "https://gitlab.com/api/v4/projects/16087798/merge_requests?created_before=#{datetime}"
+            response = conn.get base_url + "/merge_requests?created_before=#{datetime}"
             generate_changelog(conn, response.body, tag)
         end
 
         def get_all_merge_requests_after(conn, datetime, tag)
-            response = conn.get "https://gitlab.com/api/v4/projects/16087798/merge_requests?created_after=#{datetime}"
+            response = conn.get base_url + "/merge_requests?created_after=#{datetime}"
             generate_changelog(conn, response.body, tag)
         end
 
