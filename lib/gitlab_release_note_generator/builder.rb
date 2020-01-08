@@ -37,7 +37,6 @@ module GitlabReleaseNoteGenerator
 
         def get_all_merge_requests_after(conn, datetime)
             response = conn.get @@base_url + "/merge_requests?created_after=#{datetime}?state=merged?scope=all"
-
             return response.body
         end
 

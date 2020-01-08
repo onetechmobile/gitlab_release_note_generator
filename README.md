@@ -1,5 +1,9 @@
 # GitlabReleaseNoteGenerator
 
+## Description 
+
+This gem helps you to create release notes.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -10,15 +14,32 @@ gem 'gitlab_release_note_generator'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
     $ gem install gitlab_release_note_generator
 
+Run this script in your console:
+```
+echo "function generate_release_notes() {    
+	PATH_TO_RELEASE_NOTE_GENERATOR=`gem which gitlab_release_note_generator`;
+    ruby "$"PATH_TO_RELEASE_NOTE_GENERATOR "$"1 "$"2 "$"3 
+}" > ~/.gitlab_release_note_generator.sh    
+```
+
+Add permission ```chmod +x ~/.gitlab_release_note_generator.sh```
+
+Add created shell command to .bashrc or .zshrc or your preffered shell
+```
+echo source ~/.gitlab_release_note_generator.sh  >> ~/.zshrc
+```
+
 ## Usage
 
-TODO: Write usage instructions here
+```
+generate_release_notes <Host-Name> <Private-Token> <Project-ID> 
+```
 
 ## Development
 
