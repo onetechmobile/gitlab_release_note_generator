@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gitlab_release_note_generator (0.1.4)
+    gitlab_release_note_generator (0.1.5)
 
 GEM
   remote: https://rubygems.org/
